@@ -1,39 +1,431 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>Genius - E-Learning for 8-10</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f8ff;
-      text-align: center;
-      padding: 30px;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    .class-btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
-    }
-    .class-btn:hover {
-      background-color: #2c80b4;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>জিনিয়াস - তোমার স্বপ্ন পূরণের সেরা ঠিকানা</title>
+    
+    <!-- Google Fonts (Hind Siliguri for Bengali) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (for Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* CSS কোড এখানে শুরু */
+
+        /* --- ভেরিয়েবল এবং গ্লোবাল স্টাইল --- */
+        :root {
+            --primary-color: #0d2c54;
+            --secondary-color: #ffc107;
+            --white-color: #ffffff;
+            --light-gray-color: #f8f9fa;
+            --text-color: #343a40;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Hind Siliguri', sans-serif; line-height: 1.7; color: var(--text-color); background-color: var(--white-color); }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        h1, h2, h3, h4 { color: var(--primary-color); line-height: 1.3; }
+        h2.section-title { text-align: center; font-size: 2.8rem; margin-bottom: 50px; font-weight: 700; }
+        .section { padding: 80px 0; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-align: center; border: 2px solid transparent; cursor: pointer;}
+        .btn-primary { background-color: var(--secondary-color); color: var(--primary-color); border-color: var(--secondary-color); }
+        .btn-primary:hover { background-color: transparent; color: var(--secondary-color); }
+        .btn-secondary { background-color: transparent; color: var(--white-color); border-color: var(--white-color); }
+        .btn-secondary:hover { background-color: var(--white-color); color: var(--primary-color); }
+
+        /* --- টপ বার --- */
+        .top-bar { background-color: #f1f1f1; padding: 8px 0; font-size: 0.9rem; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .top-bar-left a, .top-bar-right a { color: var(--text-color); margin: 0 10px; text-decoration: none; }
+        .top-bar-right .social-icons a { margin: 0 5px; }
+        .top-bar-right #auth-links a { cursor: pointer; }
+
+        /* --- নেভিগেশন মেন্যু --- */
+        .navbar { background-color: var(--white-color); padding: 15px 0; position: sticky; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .navbar .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); text-decoration: none; }
+        .navbar .logo i { color: var(--secondary-color); }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { text-decoration: none; color: var(--primary-color); font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--secondary-color); }
+        .nav-links .btn-free-class { background-color: var(--primary-color); color: var(--white-color); padding: 10px 20px; border-radius: 5px; }
+        .nav-links .btn-free-class:hover { background-color: var(--secondary-color); color: var(--primary-color); }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary-color); }
+
+        /* --- হিরো সেকশন --- */
+        .hero { background: linear-gradient(rgba(13, 44, 84, 0.8), rgba(13, 44, 84, 0.8)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070') no-repeat center center/cover; min-height: 90vh; color: var(--white-color); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+        .hero-content { max-width: 800px; padding: 0 20px;}
+        .hero h1 { font-size: 3.5rem; font-weight: 700; color: var(--white-color); margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .hero-info-bar { position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 900px; background: var(--white-color); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; justify-content: space-around; padding: 25px; text-align: center; }
+        .info-item { color: var(--primary-color); }
+        .info-item i { font-size: 2rem; margin-bottom: 10px; color: var(--secondary-color); }
+        .info-item h4 { font-size: 1.5rem; margin: 0; }
+        .info-item p { color: var(--text-color); font-size: 1rem; margin: 0; }
+        
+        /* অন্যান্য সেকশন... (আগের মতোই থাকবে) */
+        .features-section { padding-top: 130px; background-color: var(--light-gray-color); } .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; } .feature-card { background: var(--white-color); padding: 30px; text-align: center; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; } .feature-card:hover { transform: translateY(-10px); box-shadow: 0 15px 25px rgba(0,0,0,0.1); } .feature-card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; } .feature-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .courses-section { background-color: var(--white-color); } .course-filters { text-align: center; margin-bottom: 40px; } .course-filters button { background: none; border: 2px solid var(--primary-color); color: var(--primary-color); padding: 10px 20px; margin: 5px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s; } .course-filters button.active, .course-filters button:hover { background: var(--primary-color); color: var(--white-color); } .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; } .course-card { background: var(--white-color); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; } .course-card:hover { transform: translateY(-5px); } .course-card img { width: 100%; height: 200px; object-fit: cover; } .course-card-content { padding: 20px; } .course-card-content h3 { font-size: 1.5rem; } .course-card-content p { margin: 10px 0; font-size: 0.9rem; } .course-price { font-size: 1.5rem; font-weight: 700; color: var(--success-color); } .course-price s { font-size: 1rem; color: #6c757d; margin-left: 10px; } .course-card-buttons { margin-top: 20px; display: flex; justify-content: space-between; } .course-card-buttons .btn { padding: 8px 15px; font-size: 0.9rem; }
+        .instructors-section { background-color: var(--light-gray-color); } .instructor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; } .instructor-card { text-align: center; } .instructor-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid var(--white-color); box-shadow: 0 0 15px rgba(0,0,0,0.1); margin-bottom: 15px; } .instructor-card h3 { font-size: 1.2rem; margin-bottom: 5px; } .instructor-card p { color: #6c757d; font-weight: 500; }
+        .testimonials-section { background-color: var(--white-color); } .testimonial-container { display: flex; gap: 50px; align-items: center; } .testimonial-quotes { flex: 1; } .testimonial-video { flex: 1; } .testimonial-card { background: var(--light-gray-color); padding: 25px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid var(--secondary-color); } .testimonial-card p { font-style: italic; margin-bottom: 15px; } .testimonial-author { display: flex; align-items: center; } .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; } .author-info h4 { font-size: 1.1rem; margin: 0; } .author-info span { font-size: 0.9rem; color: #6c757d; } .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); } .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .how-it-works-section { background-color: var(--light-gray-color); } .steps-container { display: flex; justify-content: space-between; text-align: center; position: relative; } .step { flex-basis: 30%; position: relative; } .step i { font-size: 3rem; color: var(--white-color); background-color: var(--primary-color); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin-bottom: 20px; } .step h3 { font-size: 1.4rem; } .steps-container .step:not(:last-child)::after { content: ''; position: absolute; top: 40px; left: 70%; width: 60%; border-top: 2px dashed var(--secondary-color); z-index: -1; }
+        .app-download-section { background: linear-gradient(45deg, var(--primary-color), #1a4a8a); color: var(--white-color); padding: 80px 0; } .app-download-container { display: flex; align-items: center; gap: 50px; } .app-mockup { flex: 1; text-align: center; } .app-mockup img { max-width: 300px; } .app-info { flex: 1; } .app-info h2 { font-size: 2.5rem; color: var(--white-color); } .app-info p { margin-bottom: 30px; } .app-store-buttons { display: flex; flex-wrap: wrap; gap: 15px; } .app-store-buttons img { height: 50px; cursor: pointer; margin-right: 0; }
+        .footer { background-color: var(--primary-color); color: #adb5bd; padding: 60px 0 20px 0; } .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; margin-bottom: 40px; } .footer h4 { color: var(--white-color); margin-bottom: 20px; font-size: 1.2rem; } .footer ul { list-style: none; } .footer ul li { margin-bottom: 10px; } .footer ul li a { color: #adb5bd; text-decoration: none; transition: color 0.3s; } .footer ul li a:hover { color: var(--white-color); } .footer .logo { font-size: 1.8rem; font-weight: 700; color: var(--white-color); } .footer .logo i { color: var(--secondary-color); } .footer-socials a { display: inline-block; width: 40px; height: 40px; line-height: 40px; text-align: center; background: rgba(255,255,255,0.1); color: var(--white-color); border-radius: 50%; margin-right: 10px; transition: background 0.3s; } .footer-socials a:hover { background: var(--secondary-color); } .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+        /* --- নতুন: লগইন/সাইন-আপ মডাল --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-container {
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px; right: 15px;
+            font-size: 1.5rem;
+            color: #aaa;
+            cursor: pointer;
+        }
+        .modal-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        .modal-container .btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+        }
+        .modal-switch {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .modal-switch a {
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        #signup-form .form-group-name { display: block; }
+        #login-form .form-group-name { display: none; }
+        #login-form { display: none; }
+        .error-message {
+            color: var(--danger-color);
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+
+        /* --- রেসপন্সিভ ডিজাইন --- */
+        @media (max-width: 992px) {
+            h2.section-title { font-size: 2.2rem; } .features-grid, .course-grid, .instructor-grid { grid-template-columns: repeat(2, 1fr); } .testimonial-container, .app-download-container { flex-direction: column; text-align: center; gap: 30px; } .app-mockup { margin-bottom: 20px; } .app-store-buttons { justify-content: center; } .footer-grid { grid-template-columns: 1fr 1fr; } .steps-container .step:not(:last-child)::after { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 60px 0; }
+            .top-bar .container { flex-direction: column; gap: 5px; }
+            .menu-toggle { display: block; } .navbar .container { position: relative; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--white-color); box-shadow: 0 5px 10px rgba(0,0,0,0.1); padding: 20px 0; text-align: center; }
+            .nav-links.active { display: flex; } .nav-links li { margin: 10px 0; }
+            .hero { min-height: auto; padding: 80px 20px; }
+            .hero h1 { font-size: 2.2rem; } .hero p { font-size: 1.1rem; }
+            .hero-buttons { flex-direction: column; align-items: center; gap: 15px; }
+            .hero-info-bar { position: static; transform: none; width: 100%; border-radius: 0; flex-direction: column; gap: 20px; padding: 30px; margin-top: 40px; }
+            .features-section { padding-top: 60px; }
+            .features-grid, .course-grid, .instructor-grid { grid-template-columns: 1fr; }
+            .steps-container { flex-direction: column; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr; } .footer-col { margin-bottom: 20px; text-align: center;} .footer-col .logo, .footer-col p {text-align: center;}
+        }
+
+    </style>
 </head>
 <body>
-  <h1>📚 Welcome to Genius E-Learning Platform</h1>
-  <p>Choose your class to begin:</p>
 
-  <a href="class8.html" class="class-btn">Class 8</a>
-  <a href="class9.html" class="class-btn">Class 9</a>
-  <a href="class10.html" class="class-btn">Class 10</a>
+    <!-- ১. টপ বার -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="tel:01XXXXXXXXX"><i class="fas fa-phone"></i> 01xxxxxxxxx</a>
+                <a href="mailto:support@genius-academy.com"><i class="fas fa-envelope"></i> support@genius-academy.com</a>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">শিক্ষক হিসেবে যোগ দিন</a>
+                <span id="auth-links">
+                    <a id="login-signup-btn">লগইন/সাইন আপ</a>
+                </span>
+                <span class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ২. নেভিগেশন মেন্যু -->
+    <nav class="navbar">
+        <!-- (আগের মতই) -->
+    </nav>
+    
+    <!-- বাকি সব সেকশন আগের মতই থাকবে -->
+    <!-- ৩. হিরো সেকশন -->
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <h1>জিনিয়াসদের কাতারে তোমাকেও স্বাগতম!</h1>
+            <p class="sub-headline">SSC, HSC ও ৮ম শ্রেণির সম্পূর্ণ প্রস্তুতি, এখন তোমার হাতের মুঠোয়। দেশের সেরা শিক্ষকদের সাথে লাইভ ক্লাস, মডেল টেস্ট আর সার্বক্ষণিক গাইডলাইনের মাধ্যমে নাও সেরা প্রস্তুতি।</p>
+            <div class="hero-buttons">
+                <a href="#courses" class="btn btn-primary">আমাদের কোর্সগুলো দেখুন</a>
+                <a href="#" class="btn btn-secondary">একটি ফ্রি ক্লাস করুন</a>
+            </div>
+        </div>
+        <div class="hero-info-bar">
+            <div class="info-item"><i class="fas fa-chalkboard-teacher"></i><h4>50+</h4><p>অভিজ্ঞ শিক্ষক</p></div>
+            <div class="info-item"><i class="fas fa-user-graduate"></i><h4>10,000+</h4><p>সফল শিক্ষার্থী</p></div>
+            <div class="info-item"><i class="fas fa-video"></i><h4>500+</h4><p>লাইভ ক্লাস</p></div>
+        </div>
+    </header>
+    <!-- ... বাকি সব সেকশন এখানে থাকবে ... -->
+    <footer class="footer" id="footer">
+      <!-- ... ফুটার আগের মতই থাকবে ... -->
+    </footer>
+
+    <!-- নতুন: লগইন/সাইন-আপ মডাল -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-container">
+            <i class="fas fa-times modal-close"></i>
+            
+            <!-- সাইন আপ ফর্ম -->
+            <div id="signup-form">
+                <h2>নতুন অ্যাকাউন্ট তৈরি করুন</h2>
+                <p class="error-message" id="signup-error"></p>
+                <form>
+                    <div class="form-group form-group-name">
+                        <label for="signup-name">আপনার নাম</label>
+                        <input type="text" id="signup-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">ইমেইল</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">পাসওয়ার্ড</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">সাইন আপ</button>
+                </form>
+                <div class="modal-switch">
+                    <p>ইতিমধ্যে অ্যাকাউন্ট আছে? <a id="show-login">লগইন করুন</a></p>
+                </div>
+            </div>
+
+            <!-- লগইন ফর্ম -->
+            <div id="login-form">
+                <h2>লগইন করুন</h2>
+                <p class="error-message" id="login-error"></p>
+                <form>
+                    <div class="form-group">
+                        <label for="login-email">ইমেইল</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">পাসওয়ার্ড</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">লগইন</button>
+                </form>
+                <div class="modal-switch">
+                    <p>অ্যাকাউন্ট নেই? <a id="show-signup">নতুন অ্যাকাউন্ট তৈরি করুন</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Firebase SDK স্ক্রিপ্ট -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    
+
+    <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyBA-nyNWp7AnbcfxAZ-HgGga4a12yLZ-ik",
+    authDomain: "genius-academy-bd.firebaseapp.com",
+    projectId: "genius-academy-bd",
+    storageBucket: "genius-academy-bd.firebasestorage.app",
+    messagingSenderId: "934003487720",
+    appId: "1:934003487720:web:1e9a3ab6098cef17eb2a5d"
+    };
+    
+        
+
+        // Firebase ইনিশিয়ালাইজ করুন
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // --- মোবাইল মেন্যু টগল ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenu) {
+            const navLinks = document.getElementById('nav-links');
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+        
+        // --- লগইন/সাইন-আপ মডাল এর এলিমেন্ট ---
+        const authModal = document.getElementById('auth-modal');
+        const loginSignupBtn = document.getElementById('login-signup-btn');
+        const modalCloseBtn = authModal.querySelector('.modal-close');
+        
+        const signupFormContainer = document.getElementById('signup-form');
+        const loginFormContainer = document.getElementById('login-form');
+        const showLoginBtn = document.getElementById('show-login');
+        const showSignupBtn = document.getElementById('show-signup');
+
+        const authLinksContainer = document.getElementById('auth-links');
+
+        // মডাল খোলা এবং বন্ধ করার ইভেন্ট
+        loginSignupBtn.addEventListener('click', () => authModal.style.display = 'flex');
+        modalCloseBtn.addEventListener('click', () => authModal.style.display = 'none');
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) {
+                authModal.style.display = 'none';
+            }
+        });
+
+        // লগইন ও সাইন আপ ফর্ম अदল-বদল
+        showLoginBtn.addEventListener('click', () => {
+            signupFormContainer.style.display = 'none';
+            loginFormContainer.style.display = 'block';
+        });
+        showSignupBtn.addEventListener('click', () => {
+            loginFormContainer.style.display = 'none';
+            signupFormContainer.style.display = 'block';
+        });
+
+        // --- সাইন আপ ---
+        const signupForm = signupFormContainer.querySelector('form');
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const errorP = document.getElementById('signup-error');
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(userCredential => {
+                    // Firestore এ ব্যবহারকারীর তথ্য সেভ করা
+                    return db.collection('users').doc(userCredential.user.uid).set({
+                        name: name,
+                        email: email,
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                })
+                .then(() => {
+                    signupForm.reset();
+                    authModal.style.display = 'none';
+                    alert('অভিনন্দন! আপনার অ্যাকাউন্ট তৈরি হয়ে গেছে।');
+                })
+                .catch(error => {
+                    errorP.textContent = error.message;
+                    errorP.style.display = 'block';
+                });
+        });
+
+        // --- লগইন ---
+        const loginForm = loginFormContainer.querySelector('form');
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const errorP = document.getElementById('login-error');
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then(userCredential => {
+                    loginForm.reset();
+                    authModal.style.display = 'none';
+                    alert('লগইন সফল হয়েছে!');
+                })
+                .catch(error => {
+                    errorP.textContent = "আপনার ইমেইল বা পাসওয়ার্ড সঠিক নয়।";
+                    errorP.style.display = 'block';
+                });
+        });
+
+        // --- লগ আউট ---
+        function setupLogout() {
+            const logoutBtn = document.getElementById('logout-btn');
+            logoutBtn.addEventListener('click', () => {
+                auth.signOut().then(() => {
+                    alert('আপনি সফলভাবে লগ আউট করেছেন।');
+                });
+            });
+        }
+
+        // --- ব্যবহারকারী লগইন নাকি লগ আউট, তা চেক করা ---
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                // ব্যবহারকারী লগইন করা আছে
+                db.collection('users').doc(user.uid).get().then(doc => {
+                    let userName = user.email;
+                    if (doc.exists && doc.data().name) {
+                        userName = doc.data().name;
+                    }
+                    authLinksContainer.innerHTML = `
+                        <span>স্বাগতম, ${userName}</span>
+                        <a id="logout-btn" style="margin-left: 15px; cursor:pointer;">লগ আউট</a>
+                    `;
+                    setupLogout();
+                });
+
+            } else {
+                // ব্যবহারকারী লগ আউট করা আছে
+                authLinksContainer.innerHTML = `<a id="login-signup-btn">লগইন/সাইন আপ</a>`;
+                // নতুন করে loginSignupBtn এলিমেন্ট ধরতে হবে কারণ এটি ডাইনামিকভাবে তৈরি হয়েছে
+                const newLoginSignupBtn = document.getElementById('login-signup-btn');
+                newLoginSignupBtn.addEventListener('click', () => authModal.style.display = 'flex');
+            }
+        });
+
+    </script>
 </body>
-</html>
+  </html>
