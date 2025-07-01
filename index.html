@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>জিনিয়াস - তোমার স্বপ্ন পূরণের সেরা ঠিকানা</title>
+    
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* আপনার সকল CSS কোড এখানে ছিল এবং তা অক্ষত আছে */
+        :root {
+            --primary-color: #0d2c54; --secondary-color: #ffc107; --white-color: #ffffff;
+            --light-gray-color: #f8f9fa; --text-color: #343a40; --success-color: #28a745;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Hind Siliguri', sans-serif; line-height: 1.7; color: var(--text-color); background-color: var(--white-color); }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        h1, h2, h3, h4 { color: var(--primary-color); line-height: 1.3; }
+        h2.section-title { text-align: center; font-size: 2.8rem; margin-bottom: 50px; font-weight: 700; }
+        .section { padding: 80px 0; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-align: center; cursor: pointer; border: none; }
+        .btn-primary { background-color: var(--secondary-color); color: var(--primary-color); border: 2px solid var(--secondary-color); }
+        .btn-primary:hover { background-color: transparent; color: var(--secondary-color); }
+        .btn-secondary { background-color: transparent; color: var(--white-color); border: 2px solid var(--white-color); }
+        .btn-secondary:hover { background-color: var(--white-color); color: var(--primary-color); }
+        .top-bar { background-color: #f1f1f1; padding: 8px 0; font-size: 0.9rem; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-left a, .top-bar-right a { color: var(--text-color); margin: 0 10px; text-decoration: none; }
+        .top-bar-right .social-icons { display: inline-flex; align-items: center; }
+        .top-bar-right .social-icons a { margin: 0 5px; }
+        .navbar { background-color: var(--white-color); padding: 15px 0; position: sticky; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .navbar .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); text-decoration: none; }
+        .navbar .logo i { color: var(--secondary-color); }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { text-decoration: none; color: var(--primary-color); font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--secondary-color); }
+        .nav-links .btn-free-class { background-color: var(--primary-color); color: var(--white-color); padding: 10px 20px; border-radius: 5px; }
+        .nav-links .btn-free-class:hover { background-color: var(--secondary-color); color: var(--primary-color); }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary-color); }
+        .hero { background: linear-gradient(rgba(13, 44, 84, 0.8), rgba(13, 44, 84, 0.8)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070') no-repeat center center/cover; min-height: 90vh; color: var(--white-color); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+        .hero-content { max-width: 800px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; color: var(--white-color); margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons .btn { margin: 0 10px; }
+        .hero-info-bar { position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 900px; background: var(--white-color); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; justify-content: space-around; padding: 25px; text-align: center; }
+        .info-item { color: var(--primary-color); }
+        .info-item i { font-size: 2rem; margin-bottom: 10px; color: var(--secondary-color); }
+        .info-item h4 { font-size: 1.5rem; margin: 0; }
+        .info-item p { color: var(--text-color); font-size: 1rem; margin: 0; }
+        .features-section { padding-top: 130px; background-color: var(--light-gray-color); }
+        .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .feature-card { background: var(--white-color); padding: 30px; text-align: center; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 15px 25px rgba(0,0,0,0.1); }
+        .feature-card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .courses-section { background-color: var(--white-color); }
+        .course-filters { text-align: center; margin-bottom: 40px; }
+        .course-filters button { background: none; border: 2px solid var(--primary-color); color: var(--primary-color); padding: 10px 20px; margin: 5px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .course-filters button.active, .course-filters button:hover { background: var(--primary-color); color: var(--white-color); }
+        .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .course-card { background: var(--white-color); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .course-card:hover { transform: translateY(-5px); }
+        .course-card img { width: 100%; height: 200px; object-fit: cover; }
+        .course-card-content { padding: 20px; }
+        .course-card-content h3 { font-size: 1.5rem; }
+        .course-card-content p { margin: 10px 0; font-size: 0.9rem; }
+        .course-price { font-size: 1.5rem; font-weight: 700; color: var(--success-color); }
+        .course-price s { font-size: 1rem; color: #6c757d; margin-left: 10px; }
+        .course-card-buttons { margin-top: 20px; display: flex; justify-content: space-between; }
+        .course-card-buttons .btn { padding: 8px 15px; font-size: 0.9rem; }
+        .instructors-section { background-color: var(--light-gray-color); }
+        .instructor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .instructor-card { text-align: center; }
+        .instructor-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid var(--white-color); box-shadow: 0 0 15px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .instructor-card h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        .instructor-card p { color: #6c757d; font-weight: 500; }
+        .testimonials-section { background-color: var(--white-color); }
+        .testimonial-container { display: flex; gap: 50px; align-items: center; }
+        .testimonial-quotes { flex: 1; }
+        .testimonial-video { flex: 1; }
+        .testimonial-card { background: var(--light-gray-color); padding: 25px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid var(--secondary-color); }
+        .testimonial-card p { font-style: italic; margin-bottom: 15px; }
+        .testimonial-author { display: flex; align-items: center; }
+        .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; }
+        .author-info h4 { font-size: 1.1rem; margin: 0; }
+        .author-info span { font-size: 0.9rem; color: #6c757d; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .how-it-works-section { background-color: var(--light-gray-color); }
+        .steps-container { display: flex; justify-content: space-between; text-align: center; }
+        .step { flex-basis: 30%; position: relative; }
+        .step i { font-size: 3rem; color: var(--white-color); background-color: var(--primary-color); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin-bottom: 20px; }
+        .step h3 { font-size: 1.4rem; }
+        .steps-container .step:not(:last-child)::after { content: ''; position: absolute; top: 40px; left: 70%; width: 60%; border-top: 2px dashed var(--secondary-color); }
+        .app-download-section { background: linear-gradient(45deg, var(--primary-color), #1a4a8a); color: var(--white-color); padding: 80px 0; }
+        .app-download-container { display: flex; align-items: center; gap: 50px; }
+        .app-mockup { flex: 1; text-align: center; }
+        .app-mockup img { max-width: 300px; }
+        .app-info { flex: 1; }
+        .app-info h2 { font-size: 2.5rem; color: var(--white-color); }
+        .app-info p { margin-bottom: 30px; }
+        .app-store-buttons img { height: 50px; margin-right: 15px; cursor: pointer; }
+        .footer { background-color: var(--primary-color); color: #adb5bd; padding: 60px 0 20px 0; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
+        .footer h4 { color: var(--white-color); margin-bottom: 20px; font-size: 1.2rem; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul li a { color: #adb5bd; text-decoration: none; transition: color 0.3s; }
+        .footer ul li a:hover { color: var(--white-color); }
+        .footer .logo { font-size: 1.8rem; font-weight: 700; color: var(--white-color); }
+        .footer .logo i { color: var(--secondary-color); }
+        .footer-socials a { display: inline-block; width: 40px; height: 40px; line-height: 40px; text-align: center; background: rgba(255,255,255,0.1); color: var(--white-color); border-radius: 50%; margin-right: 10px; transition: background 0.3s; }
+        .footer-socials a:hover { background: var(--secondary-color); }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        
+        .auth-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(13, 44, 84, 0.9), rgba(13, 44, 84, 0.9)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070') no-repeat center center/cover;
+            z-index: 2000; display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s;
+        }
+        .auth-modal-overlay.active { opacity: 1; visibility: visible; }
+        .auth-modal {
+            background: var(--white-color); padding: 30px; border-radius: 10px;
+            width: 90%; max-width: 400px; position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .auth-modal h2 { text-align: center; margin-bottom: 20px; }
+        .auth-form .form-group { margin-bottom: 15px; }
+        .auth-form label { display: block; margin-bottom: 5px; font-weight: 600; text-align: left; }
+        .auth-form input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-family: 'Hind Siliguri', sans-serif; }
+        .auth-form .btn { width: 100%; margin-top: 10px; padding: 10px; }
+        .form-switch-link { text-align: center; margin-top: 20px; font-size: 0.9rem; }
+        .form-switch-link span { color: var(--primary-color); cursor: pointer; font-weight: 600; text-decoration: underline; }
+        #signup-form { display: none; }
+        .form-message { padding: 10px; margin-bottom: 15px; border-radius: 5px; font-size: 0.9rem; text-align: center; display: none; }
+        .form-message.success { background-color: #d4edda; color: #155724; }
+        .form-message.error { background-color: #f8d7da; color: #721c24; }
+
+        @media (max-width: 992px) {
+            h2.section-title { font-size: 2.2rem; }
+            .features-grid, .course-grid, .instructor-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonial-container, .app-download-container { flex-direction: column; text-align: center; }
+            .app-mockup { margin-bottom: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .steps-container .step:not(:last-child)::after { display: none; }
+        }
+        @media (max-width: 768px) {
+            .section { padding: 60px 0; }
+            .top-bar .container { flex-direction: column; gap: 5px; }
+            .menu-toggle { display: block; }
+            .navbar .container { position: relative; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--white-color); box-shadow: 0 5px 10px rgba(0,0,0,0.1); padding: 20px 0; text-align: center; }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 10px 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-info-bar { position: static; transform: none; width: 100%; border-radius: 0; flex-direction: column; gap: 20px; padding: 30px; }
+            .features-section { padding-top: 60px; }
+            .features-grid, .course-grid, .instructor-grid { grid-template-columns: 1fr; }
+            .steps-container { flex-direction: column; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-col { margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-content" style="display: none;">
+        <!-- আপনার ওয়েবসাইটের সকল কনটেন্ট এখানে থাকবে -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <a href="tel:01XXXXXXXXX"><i class="fas fa-phone"></i> 01xxxxxxxxx</a>
+                    <a href="mailto:support@genius-academy.com"><i class="fas fa-envelope"></i> support@genius-academy.com</a>
+                </div>
+                <div class="top-bar-right">
+                    <a href="#">শিক্ষক হিসেবে যোগ দিন</a>
+                    <div id="user-info" style="display: inline-flex; align-items: center; gap: 10px;">
+                        <span id="welcome-msg" style="font-weight: 600;"></span>
+                        <a href="#" id="logout-btn" style="background: #dc3545; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; text-decoration: none;">লগ আউট</a>
+                    </div>
+                    <span class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- বাকি সকল সেকশন (navbar, hero, footer, etc.) -->
+        <nav class="navbar"><div class="container"><a href="#" class="logo"><i class="fas fa-brain"></i> জিনিয়াস</a><div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div><ul class="nav-links" id="nav-links"><li><a href="#hero">হোম</a></li><li><a href="#courses">কোর্সসমূহ</a></li><li><a href="#instructors">আমাদের শিক্ষকবৃন্দ</a></li><li><a href="#testimonials">সাফল্যের গল্প</a></li><li><a href="#">ব্লগ</a></li><li><a href="#footer">যোগাযোগ</a></li><li><a href="#" class="btn btn-free-class">ফ্রি ক্লাস করুন</a></li></ul></div></nav>
+        <header class="hero" id="hero"><div class="hero-content"><h1>জিনিয়াসদের কাতারে তোমাকেও স্বাগতম!</h1><p class="sub-headline">SSC, HSC ও ৮ম শ্রেণির সম্পূর্ণ প্রস্তুতি, এখন তোমার হাতের মুঠোয়। দেশের সেরা শিক্ষকদের সাথে লাইভ ক্লাস, মডেল টেস্ট আর সার্বক্ষণিক গাইডলাইনের মাধ্যমে নাও সেরা প্রস্তুতি।</p><div class="hero-buttons"><a href="#courses" class="btn btn-primary">আমাদের কোর্সগুলো দেখুন</a><a href="#" class="btn btn-secondary">একটি ফ্রি ক্লাস করুন</a></div></div><div class="hero-info-bar"><div class="info-item"><i class="fas fa-chalkboard-teacher"></i><h4>50+</h4><p>অভিজ্ঞ শিক্ষক</p></div><div class="info-item"><i class="fas fa-user-graduate"></i><h4>10,000+</h4><p>সফল শিক্ষার্থী</p></div><div class="info-item"><i class="fas fa-video"></i><h4>500+</h4><p>লাইভ ক্লাস</p></div></div></header>
+        <section class="section features-section" id="features"><div class="container"><h2 class="section-title">কেন হাজারো শিক্ষার্থীর ভরসা 'জিনিয়াস'?</h2><div class="features-grid"><div class="feature-card"><i class="fas fa-play-circle"></i><h3>ইন্টারেক্টিভ লাইভ ক্লাস</h3><p>প্রতিটি ক্লাস সরাসরি শিক্ষকদের সাথে করার সুযোগ। প্রশ্ন করে বুঝে নাও পড়ার প্রতিটি অংশ।</p></div><div class="feature-card"><i class="fas fa-file-alt"></i><h3>নিয়মিত মডেল টেস্ট</h3><p>বোর্ড পরীক্ষার আদলে মডেল টেস্ট দিয়ে নিজের প্রস্তুতিকে চূড়ান্ত পর্যায়ে নিয়ে যাও।</p></div><div class="feature-card"><i class="fas fa-headset"></i><h3>২৪/৭ ডাউট সলভিং</h3><p>যখনই কোনো সমস্যায় আটকাবে, আমাদের অভিজ্ঞ শিক্ষকরা আছেন তোমার পাশে।</p></div><div class="feature-card"><i class="fas fa-file-pdf"></i><h3>মানসম্মত লেকচার শিট</h3><p>প্রতিটি ক্লাসের পর গুছিয়ে প্রস্তুত করা লেকচার শিট ও নোটস পাবে PDF আকারে।</p></div></div></div></section>
+        <section class="section courses-section" id="courses"><div class="container"><h2 class="section-title">তোমার প্রয়োজন অনুযায়ী কোর্স বেছে নাও</h2><div class="course-filters"><button class="active">All Courses</button><button>SSC</button><button>HSC</button><button>Class 8th</button></div><div class="course-grid"><div class="course-card"><img src="https://via.placeholder.com/400x200.png?text=HSC+Course" alt="Course Image"><div class="course-card-content"><h3>HSC 2025 ক্র্যাশ কোর্স</h3><p>৫টি বিষয়, ১৫০+ লাইভ ক্লাস, ৩০+ মডেল টেস্ট</p><div class="course-price">৳৪০০০ <s>৳৫০০০</s></div><div class="course-card-buttons"><a href="#" class="btn btn-primary">ভর্তি হোন</a><a href="#" class="btn btn-secondary" style="color:var(--primary-color); border-color:var(--primary-color);">বিস্তারিত দেখুন</a></div></div></div><div class="course-card"><img src="https://via.placeholder.com/400x200.png?text=SSC+Course" alt="Course Image"><div class="course-card-content"><h3>SSC 2025 ফাইনাল মডেল টেস্ট</h3><p>সকল বিষয়, ৫০+ মডেল টেস্ট, সল্ভ ক্লাস</p><div class="course-price">৳২৫০০ <s>৳৩০০০</s></div><div class="course-card-buttons"><a href="#" class="btn btn-primary">ভর্তি হোন</a><a href="#" class="btn btn-secondary" style="color:var(--primary-color); border-color:var(--primary-color);">বিস্তারিত দেখুন</a></div></div></div><div class="course-card"><img src="https://via.placeholder.com/400x200.png?text=Class+8" alt="Course Image"><div class="course-card-content"><h3>৮ম শ্রেণি ফাউন্ডেশন কোর্স</h3><p>গণিত, বিজ্ঞান ও ইংরেজি এর পূর্ণাঙ্গ প্রস্তুতি</p><div class="course-price">৳৩০০০ <s>৳৩৫০০</s></div><div class="course-card-buttons"><a href="#" class="btn btn-primary">ভর্তি হোন</a><a href="#" class="btn btn-secondary" style="color:var(--primary-color); border-color:var(--primary-color);">বিস্তারিত দেখুন</a></div></div></div></div></div></section>
+        <section class="section instructors-section" id="instructors"><div class="container"><h2 class="section-title">যাদের হাত ধরে গড়বে স্বপ্নের ভবিষ্যৎ</h2><div class="instructor-grid"><div class="instructor-card"><img src="https://via.placeholder.com/150" alt="Instructor"><h3>আব্দুল করিম</h3><p>পদার্থবিজ্ঞান, বুয়েট</p></div><div class="instructor-card"><img src="https://via.placeholder.com/150" alt="Instructor"><h3>ফাহমিদা আক্তার</h3><p>রসায়ন, ঢাকা বিশ্ববিদ্যালয়</p></div><div class="instructor-card"><img src="https://via.placeholder.com/150" alt="Instructor"><h3>সাইফুল ইসলাম</h3><p>গণিত, বুয়েট</p></div><div class="instructor-card"><img src="https://via.placeholder.com/150" alt="Instructor"><h3>সুরাইয়া চৌধুরী</h3><p>জীববিজ্ঞান, ঢাকা বিশ্ববিদ্যালয়</p></div></div></div></section>
+        <section class="section testimonials-section" id="testimonials"><div class="container"><h2 class="section-title">আমাদের জিনিয়াসদের সাফল্যের গল্প</h2><div class="testimonial-container"><div class="testimonial-quotes"><div class="testimonial-card"><p>"জিনিয়াস একাডেমির মডেল টেস্টগুলো আমাকে বোর্ড পরীক্ষার ভয় কাটাতে অনেক সাহায্য করেছে। শিক্ষকদের গাইডলাইন ছিল অসাধারণ।"</p><div class="testimonial-author"><img src="https://via.placeholder.com/50" alt="Student"><div class="author-info"><h4>আরিফ হাসান</h4><span>SSC গোল্ডেন A+</span></div></div></div><div class="testimonial-card"><p>"আমি গ্রামের ছেলে, ভালো শিক্ষকের অভাব ছিল। জিনিয়াস এর অনলাইন ক্লাসের মাধ্যমে ঢাকা বিশ্ববিদ্যালয়ের জন্য সেরা প্রস্তুতি নিতে পেরেছি।"</p><div class="testimonial-author"><img src="https://via.placeholder.com/50" alt="Student"><div class="author-info"><h4>সুমাইয়া খাতুন</h4><span>চান্সপ্রাপ্ত, ঢাকা বিশ্ববিদ্যালয়</span></div></div></div></div><div class="testimonial-video"><div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div></div></section>
+        <section class="section how-it-works-section" id="how-it-works"><div class="container"><h2 class="section-title">জিনিয়াস একাডেমিতে যাত্রা শুরু হোক মাত্র ৩ ধাপে</h2><div class="steps-container"><div class="step"><i class="fas fa-mouse-pointer"></i><h3>ধাপ ১</h3><p>পছন্দের কোর্সটি সিলেক্ট করো</p></div><div class="step"><i class="fas fa-credit-card"></i><h3>ধাপ ২</h3><p>পেমেন্ট করে ভর্তি সম্পন্ন করো</p></div><div class="step"><i class="fas fa-laptop-code"></i><h3>ধাপ ৩</h3><p>রুটিন অনুযায়ী ক্লাস ও পরীক্ষা দাও</p></div></div></div></section>
+        <section class="app-download-section"><div class="container app-download-container"><div class="app-mockup"><img src="https://i.ibb.co/68v75Cq/app-mockup.png" alt="App Mockup"></div><div class="app-info"><h2>যেকোনো সময়, যেকোনো জায়গায় শেখার জন্য আমাদের অ্যাপ ডাউনলোড করো।</h2><p>লাইভ ক্লাস, রেকর্ডেড ভিডিও এবং কুইজসহ সব সুবিধা এখন তোমার স্মার্টফোনে।</p><div class="app-store-buttons"><a href="#"><img src="https://i.ibb.co/KLF3w2M/google-play-badge.png" alt="Google Play"></a><a href="#"><img src="https://i.ibb.co/M6Y5mVS/app-store-badge.png" alt="App Store"></a></div></div></div></section>
+        <footer class="footer" id="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><a href="#" class="logo"><i class="fas fa-brain"></i> জিনিয়াস</a><p>তোমার স্বপ্ন পূরণের সেরা ঠিকানা। আমরা মানসম্মত শিক্ষার মাধ্যমে শিক্ষার্থীদের সেরা প্রস্তুতি নিশ্চিত করি।</p><div class="footer-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div><div class="footer-col"><h4>গুরুত্বপূর্ণ লিংক</h4><ul><li><a href="#">আমাদের সম্পর্কে</a></li><li><a href="#courses">কোর্সসমূহ</a></li><li><a href="#">ব্লগ</a></li><li><a href="#">শর্তাবলী</a></li></ul></div><div class="footer-col"><h4>সাপোর্ট</h4><ul><li><a href="#">যোগাযোগ</a></li><li><a href="#">FAQ</a></li><li><a href="#">প্রাইভেসি পলিসি</a></li></ul></div><div class="footer-col"><h4>যোগাযোগ</h4><p><i class="fas fa-map-marker-alt"></i> ধানমন্ডি, ঢাকা-১২০৫, বাংলাদেশ</p><p><i class="fas fa-phone"></i> 01xxxxxxxxx</p><p><i class="fas fa-envelope"></i> support@genius-academy.com</p></div></div><div class="footer-bottom"><p>© 2024 জিনিয়াস একাডেমি। সর্বস্বত্ব সংরক্ষিত।</p></div></div></footer>
+    </div>
+
+    <div class="auth-modal-overlay" id="auth-modal-overlay">
+        <div class="auth-modal">
+            <div id="login-form" class="auth-form">
+                <h2>জিনিয়াসে স্বাগতম!</h2>
+                <p style="text-align:center; margin-bottom: 20px;">ওয়েবসাইটে প্রবেশ করতে লগইন করুন।</p>
+                <div id="login-message" class="form-message"></div>
+                <div class="form-group"><label for="login-email">ইমেইল</label><input type="email" id="login-email" required></div>
+                <div class="form-group"><label for="login-password">পাসওয়ার্ড</label><input type="password" id="login-password" required></div>
+                <button id="login-btn" class="btn btn-primary">লগইন</button>
+                <p class="form-switch-link">একাউন্ট নেই? <span id="show-signup">এখানে সাইন আপ করুন</span></p>
+            </div>
+            <div id="signup-form" class="auth-form">
+                <h2>নতুন একাউন্ট খুলুন</h2>
+                <div id="signup-message" class="form-message"></div>
+                <div class="form-group"><label for="signup-name">আপনার নাম</label><input type="text" id="signup-name" required></div>
+                <div class="form-group"><label for="signup-email">ইমেইল</label><input type="email" id="signup-email" required></div>
+                <div class="form-group"><label for="signup-password">পাসওয়ার্ড</label><input type="password" id="signup-password" required></div>
+                <button id="signup-btn" class="btn btn-primary">সাইন আপ</button>
+                <p class="form-switch-link">ইতিমধ্যে একাউন্ট আছে? <span id="show-login">এখানে লগইন করুন</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK - Auth এবং Firestore দুটিই যুক্ত করা হয়েছে -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBA-nyNWp7AnbcfxAZ-HgGga4a12yLZ-ik",
+            authDomain: "genius-academy-bd.firebaseapp.com",
+            projectId: "genius-academy-bd",
+            storageBucket: "genius-academy-bd.appspot.com",
+            messagingSenderId: "934003487720",
+            appId: "1:934003487720:web:1e9a3ab6098cef17eb2a5d"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore(); // Firestore ইনিশিয়ালাইজ করা হলো
+
+        // DOM Elements
+        const mainContent = document.getElementById('main-content');
+        const authModalOverlay = document.getElementById('auth-modal-overlay');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const showSignup = document.getElementById('show-signup');
+        const showLogin = document.getElementById('show-login');
+        const signupBtn = document.getElementById('signup-btn');
+        const loginBtn = document.getElementById('login-btn');
+        const logoutBtn = document.getElementById('logout-btn');
+        const welcomeMsg = document.getElementById('welcome-msg');
+        const loginMessage = document.getElementById('login-message');
+        const signupMessage = document.getElementById('signup-message');
+
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
+        
+        showSignup.addEventListener('click', () => { loginForm.style.display = 'none'; signupForm.style.display = 'block'; });
+        showLogin.addEventListener('click', () => { signupForm.style.display = 'none'; loginForm.style.display = 'block'; });
+
+        const showMessage = (element, message, type) => {
+            element.textContent = message;
+            element.className = `form-message ${type}`;
+            element.style.display = 'block';
+            setTimeout(() => { element.style.display = 'none'; }, 4000);
+        };
+        
+        // পরিবর্তন: সাইন-আপ ফাংশনে Firestore Database এ ডাটা সেভ করার কোড যোগ করা হয়েছে
+        signupBtn.addEventListener('click', () => {
+            const name = document.getElementById('signup-name').value.trim();
+            const email = document.getElementById('signup-email').value.trim();
+            const password = document.getElementById('signup-password').value.trim();
+            if (!name || !email || !password) { showMessage(signupMessage, 'অনুগ্রহ করে সবগুলো ঘর পূরণ করুন।', 'error'); return; }
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(userCredential => {
+                    const user = userCredential.user;
+                    // Auth প্রোফাইলে নাম আপডেট করা
+                    user.updateProfile({ displayName: name });
+                    
+                    // Firestore Database এ ব্যবহারকারীর তথ্য সেভ করা
+                    return db.collection('users').doc(user.uid).set({
+                        name: name,
+                        email: email,
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                })
+                .then(() => {
+                    showMessage(signupMessage, 'আপনার একাউন্ট সফলভাবে তৈরি হয়েছে! এখন লগইন করুন।', 'success');
+                    setTimeout(() => showLogin.click(), 2000);
+                })
+                .catch(error => {
+                    let message = 'একটি সমস্যা হয়েছে। আবার চেষ্টা করুন।';
+                    if (error.code === 'auth/email-already-in-use') message = 'এই ইমেইল দিয়ে ইতিমধ্যে একাউন্ট খোলা আছে।';
+                    else if (error.code === 'auth/weak-password') message = 'পাসওয়ার্ডটি কমপক্ষে ৬ অক্ষরের হতে হবে।';
+                    showMessage(signupMessage, message, 'error');
+                });
+        });
+
+        loginBtn.addEventListener('click', () => {
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+            if (!email || !password) { showMessage(loginMessage, 'অনুগ্রহ করে ইমেইল ও পাসওয়ার্ড দিন।', 'error'); return; }
+
+            auth.signInWithEmailAndPassword(email, password)
+                .catch(() => showMessage(loginMessage, 'আপনার ইমেইল অথবা পাসওয়ার্ড সঠিক নয়।', 'error'));
+        });
+        
+        logoutBtn.addEventListener('click', e => { e.preventDefault(); auth.signOut(); });
+
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                mainContent.style.display = 'block';
+                authModalOverlay.classList.remove('active');
+                welcomeMsg.textContent = `স্বাগতম, ${user.displayName || user.email}`;
+            } else {
+                mainContent.style.display = 'none';
+                authModalOverlay.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>   <div class="app-store-buttons">
+                    <a href="#"><img src="https://i.ibb.co/KLF3w2M/google-play-badge.png" alt="Google Play"></a>
+                    <a href="#"><img src="https://i.ibb.co/M6Y5mVS/app-store-badge.png" alt="App Store"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ১০. ফুটার -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo"><i class="fas fa-brain"></i> জিনিয়াস</a>
+                    <p>তোমার স্বপ্ন পূরণের সেরা ঠিকানা। আমরা মানসম্মত শিক্ষার মাধ্যমে শিক্ষার্থীদের সেরা প্রস্তুতি নিশ্চিত করি।</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>গুরুত্বপূর্ণ লিংক</h4>
+                    <ul>
+                        <li><a href="#">আমাদের সম্পর্কে</a></li>
+                        <li><a href="#courses">কোর্সসমূহ</a></li>
+                        <li><a href="#">ব্লগ</a></li>
+                        <li><a href="#">শর্তাবলী</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>সাপোর্ট</h4>
+                    <ul>
+                        <li><a href="#">যোগাযোগ</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">প্রাইভেসি পলিসি</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>যোগাযোগ</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> ধানমন্ডি, ঢাকা-১২০৫, বাংলাদেশ</p>
+                    <p><i class="fas fa-phone"></i> 01xxxxxxxxx</p>
+                    <p><i class="fas fa-envelope"></i> support@genius-academy.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 জিনিয়াস একাডেমি। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- নতুন লগইন/সাইন-আপ মডাল -->
+    <div class="auth-modal-overlay" id="auth-modal-overlay">
+        <div class="auth-modal">
+            <button class="close-btn" id="close-modal-btn">×</button>
+            
+            <!-- লগইন ফর্ম -->
+            <div id="login-form" class="auth-form">
+                <h2>লগইন করুন</h2>
+                <div id="login-message" class="form-message"></div>
+                <div class="form-group">
+                    <label for="login-email">ইমেইল</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">পাসওয়ার্ড</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button id="login-btn" class="btn btn-primary">লগইন</button>
+                <p class="form-switch-link">একাউন্ট নেই? <span id="show-signup">এখানে সাইন আপ করুন</span></p>
+            </div>
+
+            <!-- সাইন-আপ ফর্ম -->
+            <div id="signup-form" class="auth-form">
+                <h2>নতুন একাউন্ট খুলুন</h2>
+                <div id="signup-message" class="form-message"></div>
+                <div class="form-group">
+                    <label for="signup-name">আপনার নাম</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">ইমেইল</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">পাসওয়ার্ড</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <button id="signup-btn" class="btn btn-primary">সাইন আপ</button>
+                <p class="form-switch-link">ইতিমধ্যে একাউন্ট আছে? <span id="show-login">এখানে লগইন করুন</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- মডাল কোড শেষ -->
+
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <script>
+        // Firebase কনফিগারেশন
+        const firebaseConfig = {
+            apiKey: "AIzaSyBA-nyNWp7AnbcfxAZ-HgGga4a12yLZ-ik",
+            authDomain: "genius-academy-bd.firebaseapp.com",
+            projectId: "genius-academy-bd",
+            storageBucket: "genius-academy-bd.appspot.com",
+            messagingSenderId: "934003487720",
+            appId: "1:934003487720:web:1e9a3ab6098cef17eb2a5d"
+        };
+
+        // Firebase ইনিশিয়ালাইজ করুন
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // DOM Elements
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const loginSignupBtn = document.getElementById('login-signup-btn');
+        const authModalOverlay = document.getElementById('auth-modal-overlay');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const showSignup = document.getElementById('show-signup');
+        const showLogin = document.getElementById('show-login');
+        const signupBtn = document.getElementById('signup-btn');
+        const loginBtn = document.getElementById('login-btn');
+        const logoutBtn = document.getElementById('logout-btn');
+        const authLinks = document.getElementById('auth-links');
+        const userInfo = document.getElementById('user-info');
+        const welcomeMsg = document.getElementById('welcome-msg');
+        const loginMessage = document.getElementById('login-message');
+        const signupMessage = document.getElementById('signup-message');
+
+        // আপনার পুরনো মোবাইল মেন্যু টগল কোড
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // মডাল খোলা/বন্ধ করার ফাংশন
+        const openModal = () => authModalOverlay.classList.add('active');
+        const closeModal = () => authModalOverlay.classList.remove('active');
+
+        if(loginSignupBtn) {
+            loginSignupBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        }
+        
+        closeModalBtn.addEventListener('click', closeModal);
+        authModalOverlay.addEventListener('click', (e) => {
+            if (e.target === authModalOverlay) closeModal();
+        });
+
+        // ফর্ম পরিবর্তন
+        showSignup.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        });
+        showLogin.addEventListener('click', () => {
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+
+        // মেসেজ দেখানোর ফাংশন
+        const showMessage = (element, message, type) => {
+            element.textContent = message;
+            element.className = `form-message ${type}`;
+            element.style.display = 'block';
+            setTimeout(() => { element.style.display = 'none'; }, 4000);
+        };
+        
+        // সাইন-আপ বাটন ক্লিক
+        signupBtn.addEventListener('click', () => {
+            const name = document.getElementById('signup-name').value.trim();
+            const email = document.getElementById('signup-email').value.trim();
+            const password = document.getElementById('signup-password').value.trim();
+
+            if (!name || !email || !password) {
+                showMessage(signupMessage, 'অনুগ্রহ করে সবগুলো ঘর পূরণ করুন।', 'error');
+                return;
+            }
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    return userCredential.user.updateProfile({ displayName: name });
+                })
+                .then(() => {
+                    showMessage(signupMessage, 'আপনার একাউন্ট সফলভাবে তৈরি হয়েছে! এখন লগইন করুন।', 'success');
+                    setTimeout(() => showLogin.click(), 2000);
+                })
+                .catch((error) => {
+                    let message = 'একটি সমস্যা হয়েছে। আবার চেষ্টা করুন।';
+                    if (error.code === 'auth/email-already-in-use') {
+                        message = 'এই ইমেইল দিয়ে ইতিমধ্যে একাউন্ট খোলা আছে।';
+                    } else if (error.code === 'auth/weak-password') {
+                        message = 'পাসওয়ার্ডটি কমপক্ষে ৬ অক্ষরের হতে হবে।';
+                    }
+                    showMessage(signupMessage, message, 'error');
+                });
+        });
+
+        // লগইন বাটন ক্লিক
+        loginBtn.addEventListener('click', () => {
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+
+            if (!email || !password) {
+                showMessage(loginMessage, 'অনুগ্রহ করে ইমেইল ও পাসওয়ার্ড দিন।', 'error');
+                return;
+            }
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    showMessage(loginMessage, 'সফলভাবে লগইন করেছেন!', 'success');
+                    setTimeout(closeModal, 1000);
+                })
+                .catch(() => {
+                    showMessage(loginMessage, 'আপনার ইমেইল অথবা পাসওয়ার্ড সঠিক নয়।', 'error');
+                });
+        });
+        
+        // লগ আউট বাটন ক্লিক
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            auth.signOut();
+        });
+
+        // লগইন স্ট্যাটাস পরিবর্তন হলে UI আপডেট হবে
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                authLinks.style.display = 'none';
+                userInfo.style.display = 'inline-flex';
+            } else {
+                authLinks.style.display = 'inline-block';
+                userInfo.style.display = 'none';
+            }
+            if (user && user.displayName) {
+                welcomeMsg.textContent = `স্বাগতম, ${user.displayName}`;
+            } else if (user) {
+                welcomeMsg.textContent = `স্বাগতম, ${user.email}`;
+            }
+        });
+    </script>
+</body>
+</html>
