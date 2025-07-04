@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>জিনিয়াস - তোমার স্বপ্ন পূরণের সেরা ঠিকানা</title>
+    
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS ফাইল লিঙ্ক করা হলো -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- এই কন্টেইনারটি লগইন করার পর দেখা যাবে -->
+    <div id="main-content" style="display: none;">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <a href="tel:01XXXXXXXXX"><i class="fas fa-phone"></i> 01xxxxxxxxx</a>
+                    <a href="mailto:support@genius-academy.com"><i class="fas fa-envelope"></i> support@genius-academy.com</a>
+                </div>
+                <div class="top-bar-right">
+                    <a href="#">শিক্ষক হিসেবে যোগ দিন</a>
+                    <div id="user-info" style="display: inline-flex; align-items: center; gap: 10px;">
+                        <span id="welcome-msg" style="font-weight: 600;"></span>
+                        <a href="#" id="logout-btn" style="background: #dc3545; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; text-decoration: none;">লগ আউট</a>
+                    </div>
+                    <span class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo"><i class="fas fa-brain"></i> জিনিয়াস</a>
+                <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#hero">হোম</a></li>
+                    <li><a href="#courses">কোর্সসমূহ</a></li>
+                    <li><a href="#instructors">আমাদের শিক্ষকবৃন্দ</a></li>
+                    <li><a href="#testimonials">সাফল্যের গল্প</a></li>
+                    <li><a href="#">ব্লগ</a></li>
+                    <li><a href="#footer">যোগাযোগ</a></li>
+                    <li><a href="free-classes.html" class="btn btn-free-class">ফ্রি ক্লাস করুন</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header class="hero" id="hero">
+            <div class="hero-content">
+                <h1>জিনিয়াসদের কাতারে তোমাকেও স্বাগতম!</h1>
+                <p class="sub-headline">SSC, HSC ও ৮ম শ্রেণির সম্পূর্ণ প্রস্তুতি, এখন তোমার হাতের মুঠোয়। দেশের সেরা শিক্ষকদের সাথে লাইভ ক্লাস, মডেল টেস্ট আর সার্বক্ষণিক গাইডলাইনের মাধ্যমে নাও সেরা প্রস্তুতি।</p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary">আমাদের কোর্সগুলো দেখুন</a>
+                    <a href="free-classes.html" class="btn btn-secondary">একটি ফ্রি ক্লাস করুন</a>
+                </div>
+            </div>
+            <div class="hero-info-bar">
+                <div class="info-item"><i class="fas fa-chalkboard-teacher"></i><h4>50+</h4><p>অভিজ্ঞ শিক্ষক</p></div>
+                <div class="info-item"><i class="fas fa-user-graduate"></i><h4>10,000+</h4><p>সফল শিক্ষার্থী</p></div>
+                <div class="info-item"><i class="fas fa-video"></i><h4>500+</h4><p>লাইভ ক্লাস</p></div>
+            </div>
+        </header>
+        <!-- বাকি সেকশনগুলো অপরিবর্তিত থাকবে -->
+        <section class="section features-section" id="features">
+            <div class="container">
+                <h2 class="section-title">কেন হাজারো শিক্ষার্থীর ভরসা 'জিনিয়াস'?</h2>
+                <div class="features-grid">
+                    <div class="feature-card"><i class="fas fa-play-circle"></i><h3>ইন্টারেক্টিভ লাইভ ক্লাস</h3><p>প্রতিটি ক্লাস সরাসরি শিক্ষকদের সাথে করার সুযোগ। প্রশ্ন করে বুঝে নাও পড়ার প্রতিটি অংশ।</p></div>
+                    <div class="feature-card"><i class="fas fa-file-alt"></i><h3>নিয়মিত মডেল টেস্ট</h3><p>বোর্ড পরীক্ষার আদলে মডেল টেস্ট দিয়ে নিজের প্রস্তুতিকে চূড়ান্ত পর্যায়ে নিয়ে যাও।</p></div>
+                    <div class="feature-card"><i class="fas fa-headset"></i><h3>২৪/৭ ডাউট সলভিং</h3><p>যখনই কোনো সমস্যায় আটকাবে, আমাদের অভিজ্ঞ শিক্ষকরা আছেন তোমার পাশে।</p></div>
+                    <div class="feature-card"><i class="fas fa-file-pdf"></i><h3>মানসম্মত লেকচার শিট</h3><p>প্রতিটি ক্লাসের পর গুছিয়ে প্রস্তুত করা লেকচার শিট ও নোটস পাবে PDF আকারে।</p></div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="footer-grid">
+                     <div class="footer-col"><a href="#" class="logo"><i class="fas fa-brain"></i> জিনিয়াস</a><p>তোমার স্বপ্ন পূরণের সেরা ঠিকানা। আমরা মানসম্মত শিক্ষার মাধ্যমে শিক্ষার্থীদের সেরা প্রস্তুতি নিশ্চিত করি।</p><div class="footer-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+                    <div class="footer-col"><h4>গুরুত্বপূর্ণ লিংক</h4><ul><li><a href="#">আমাদের সম্পর্কে</a></li><li><a href="#courses">কোর্সসমূহ</a></li><li><a href="#">ব্লগ</a></li><li><a href="#">শর্তাবলী</a></li></ul></div>
+                    <div class="footer-col"><h4>সাপোর্ট</h4><ul><li><a href="#">যোগাযোগ</a></li><li><a href="#">FAQ</a></li><li><a href="#">প্রাইভেসি পলিসি</a></li></ul></div>
+                    <div class="footer-col"><h4>যোগাযোগ</h4><p><i class="fas fa-map-marker-alt"></i> ধানমন্ডি, ঢাকা-১২০৫, বাংলাদেশ</p><p><i class="fas fa-phone"></i> 01xxxxxxxxx</p><p><i class="fas fa-envelope"></i> support@genius-academy.com</p></div>
+                </div>
+                <div class="footer-bottom"><p>© 2024 জিনিয়াস একাডেমি। সর্বস্বত্ব সংরক্ষিত।</p></div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- লগইন/সাইন-আপ মডাল -->
+    <div id="auth-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <div id="login-form">
+                <h2>জিনিয়াসে স্বাগতম!</h2><p style="text-align:center; margin-bottom: 20px;">ওয়েবসাইটে প্রবেশ করতে লগইন করুন।</p>
+                <div id="login-message" class="form-message"></div>
+                <div class="form-group"><label for="login-email">ইমেইল</label><input type="email" id="login-email" required></div>
+                <div class="form-group"><label for="login-password">পাসওয়ার্ড</label><input type="password" id="login-password" required></div>
+                <p class="forgot-password-link"><span id="show-forgot-password">পাসওয়ার্ড ভুলে গেছেন?</span></p>
+                <button id="login-btn" class="btn btn-primary">লগইন</button>
+                <p class="form-switch-link">একাউন্ট নেই? <span id="show-signup">এখানে সাইন আপ করুন</span></p>
+            </div>
+            <div id="signup-form" style="display: none;">
+                <h2>নতুন একাউন্ট খুলুন</h2><div id="signup-message" class="form-message"></div>
+                <div class="form-group"><label for="signup-name">আপনার নাম</label><input type="text" id="signup-name" required></div>
+                <div class="form-group"><label for="signup-email">ইমেইল</label><input type="email" id="signup-email" required></div>
+                <div class="form-group"><label for="signup-password">পাসওয়ার্ড</label><input type="password" id="signup-password" required></div>
+                <button id="signup-btn" class="btn btn-primary">সাইন আপ</button>
+                <p class="form-switch-link">ইতিমধ্যে একাউন্ট আছে? <span id="show-login">এখানে লগইন করুন</span></p>
+            </div>
+            <div id="forgot-password-form" style="display: none;">
+                <h2>পাসওয়ার্ড রিসেট</h2><p style="text-align:center; margin-bottom: 20px;">আপনার ইমেইল দিন, আমরা পাসওয়ার্ড রিসেট করার লিঙ্ক পাঠিয়ে দেব।</p>
+                <div id="forgot-password-message" class="form-message"></div>
+                <div class="form-group"><label for="forgot-email">ইমেইল</label><input type="email" id="forgot-email" required></div>
+                <button id="forgot-password-btn" class="btn btn-primary">রিসেট লিঙ্ক পাঠান</button>
+                <p class="form-switch-link"><span id="back-to-login">লগইন পেজে ফিরে যান</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- প্রথমে Firebase SDK গুলো লোড হবে -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- এরপর আমাদের নিজেদের জাভাস্ক্রিপ্ট কোড -->
+    <script>
+        // === কোডটি এখানে রাখায় কোনো লিঙ্কিং বা লোডিং সমস্যা হবে না ===
+
+        // Firebase ইনিশিয়ালাইজেশন
+        const firebaseConfig = {
+            apiKey: "AIzaSyBA-nyNWp7AnbcfxAZ-HgGga4a12yLZ-ik",
+            authDomain: "genius-academy-bd.firebaseapp.com",
+            projectId: "genius-academy-bd",
+            storageBucket: "genius-academy-bd.appspot.com",
+            messagingSenderId: "934003487720",
+            appId: "1:934003487720:web:1e9a3ab6098cef17eb2a5d"
+        };
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // --- মোবাইল মেন্যু লজিক ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // --- অথেন্টিকেশন সিস্টেম ---
+        const mainContent = document.getElementById('main-content');
+        const authModalOverlay = document.getElementById('auth-modal-overlay');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const forgotPasswordForm = document.getElementById('forgot-password-form');
+        const welcomeMsg = document.getElementById('welcome-msg');
+
+        function showMessage(element, message, type) {
+            if (element) {
+                element.textContent = message;
+                element.className = `form-message ${type}`;
+                element.style.display = 'block';
+                setTimeout(() => { element.style.display = 'none'; }, 5000);
+            }
+        }
+
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                mainContent.style.display = 'block';
+                authModalOverlay.classList.remove('active');
+                welcomeMsg.textContent = `স্বাগতম, ${user.displayName || user.email}`;
+            } else {
+                mainContent.style.display = 'none';
+                authModalOverlay.classList.add('active');
+            }
+        });
+
+        function switchForm(activeForm) {
+            [loginForm, signupForm, forgotPasswordForm].forEach(form => {
+                form.style.display = form === activeForm ? 'block' : 'none';
+            });
+        }
+
+        document.getElementById('show-signup').addEventListener('click', () => switchForm(signupForm));
+        document.getElementById('show-login').addEventListener('click', () => switchForm(loginForm));
+        document.getElementById('show-forgot-password').addEventListener('click', () => switchForm(forgotPasswordForm));
+        document.getElementById('back-to-login').addEventListener('click', () => switchForm(loginForm));
+
+        document.getElementById('login-btn').addEventListener('click', () => {
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+            const loginMessage = document.getElementById('login-message');
+            auth.signInWithEmailAndPassword(email, password)
+                .catch(() => showMessage(loginMessage, 'আপনার ইমেইল অথবা পাসওয়ার্ড সঠিক নয়।', 'error'));
+        });
+
+        document.getElementById('signup-btn').addEventListener('click', () => {
+            const name = document.getElementById('signup-name').value.trim();
+            const email = document.getElementById('signup-email').value.trim();
+            const password = document.getElementById('signup-password').value.trim();
+            const signupMessage = document.getElementById('signup-message');
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(cred => {
+                    cred.user.updateProfile({ displayName: name });
+                    return db.collection('users').doc(cred.user.uid).set({ name, email });
+                })
+                .then(() => {
+                    showMessage(signupMessage, 'আপনার একাউন্ট সফলভাবে তৈরি হয়েছে! এখন লগইন করুন।', 'success');
+                    setTimeout(() => switchForm(loginForm), 2000);
+                })
+                .catch(err => {
+                    let msg = 'একটি সমস্যা হয়েছে।';
+                    if (err.code === 'auth/email-already-in-use') msg = 'এই ইমেইল দিয়ে ইতিমধ্যে একাউন্ট খোলা আছে।';
+                    else if (err.code === 'auth/weak-password') msg = 'পাসওয়ার্ডটি কমপক্ষে ৬ অক্ষরের হতে হবে।';
+                    showMessage(signupMessage, msg, 'error');
+                });
+        });
+        
+        document.getElementById('forgot-password-btn').addEventListener('click', () => {
+            const email = document.getElementById('forgot-email').value.trim();
+            const forgotPasswordMessage = document.getElementById('forgot-password-message');
+            auth.sendPasswordResetEmail(email)
+                .then(() => showMessage(forgotPasswordMessage, 'পাসওয়ার্ড রিসেট করার লিঙ্ক আপনার ইমেইলে পাঠানো হয়েছে।', 'success'))
+                .catch(() => showMessage(forgotPasswordMessage, 'এই ইমেইল দিয়ে কোনো একাউন্ট খোলা নেই।', 'error'));
+        });
+
+        document.getElementById('logout-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            auth.signOut();
+        });
+    </script>
+</body>
+</html>
